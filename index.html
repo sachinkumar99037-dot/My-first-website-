@@ -1,77 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sachin Flipkart Store</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        body { margin: 0; font-family: Roboto, Arial, sans-serif; background-color: #f1f3f6; }
-        
-        /* Flipkart Blue Header */
-        .header { background: #2874f0; padding: 10px 50px; display: flex; align-items: center; color: white; position: sticky; top: 0; z-index: 100; }
-        .logo { font-style: italic; font-weight: bold; font-size: 20px; margin-right: 20px; }
-        .search-bar { background: white; flex: 0.6; padding: 8px; border-radius: 2px; display: flex; align-items: center; }
-        .search-bar input { border: none; width: 100%; outline: none; padding-left: 10px; }
-        .search-bar i { color: #2874f0; }
-
-        /* Product Container */
-        .container { display: flex; justify-content: center; padding: 20px; margin-top: 20px; }
-        
-        /* Flipkart Style Product Card */
-        .product-card { background: white; width: 350px; padding: 20px; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); text-align: left; }
-        .product-img { width: 100%; height: 300px; object-fit: contain; margin-bottom: 15px; }
-        .product-title { font-size: 18px; color: #212121; margin-bottom: 5px; }
-        .rating { background: #388e3c; color: white; font-size: 12px; padding: 2px 6px; border-radius: 3px; font-weight: bold; }
-        .price-section { margin: 15px 0; }
-        .curr-price { font-size: 28px; font-weight: bold; color: #212121; }
-        .old-price { text-decoration: line-through; color: #878787; margin-left: 10px; }
-        .discount { color: #388e3c; font-weight: bold; margin-left: 10px; }
-
-        /* Action Buttons */
-        .action-btns { display: flex; gap: 10px; margin-top: 20px; }
-        .btn { flex: 1; padding: 15px; border: none; font-size: 16px; font-weight: bold; cursor: pointer; text-decoration: none; text-align: center; border-radius: 2px; text-transform: uppercase; }
-        .add-cart { background: #ff9f00; color: white; }
-        .buy-now { background: #fb641b; color: white; }
-        
-        .footer-text { font-size: 12px; color: #878787; margin-top: 15px; text-align: center; }
-    </style>
-</head>
-<body>
-
-    <div class="header">
-        <div class="logo">Flipkart <span style="color: #ffe500; font-size: 12px;">Plus</span></div>
-        <div class="search-bar">
-            <input type="text" placeholder="Search for products, brands and more">
-            <i class="fa fa-search"></i>
-        </div>
+<div class="product-card">
+    <img src="https://rukminim2.flixcart.com/image/832/832/xif0q/mobile/p/y/r/-original-imagz6hvcrxz7p9g.jpeg" class="product-img" alt="Vivo T4R 5G">
+    
+    <div class="product-title">Vivo T4R 5G (Arctic White, 128 GB)  (8 GB RAM)</div>
+    <span class="rating">4.5 <i class="fa fa-star"></i></span>
+    
+    <div class="price-section">
+        <span class="curr-price">₹17,999</span>
+        <span class="old-price">₹23,999</span>
+        <span class="discount">25% off</span>
     </div>
 
-    <div class="container">
-        <div class="product-card">
-            <img src="WhatsApp Image 2026-03-31 at 2.04.48 PM.jpeg" class="product-img" alt="Product">
-            
-            <div class="product-title">Sachin Special Edition - Premium Learning</div>
-            <span class="rating">4.5 <i class="fa fa-star"></i></span>
-            
-            <div class="price-section">
-                <span class="curr-price">₹499</span>
-                <span class="old-price">₹1,999</span>
-                <span class="discount">75% off</span>
-            </div>
+    <p style="font-size: 14px; color: #212121;">
+        <b>Highlights:</b><br>
+        • 8 GB RAM | 128 GB ROM<br>
+        • 50MP + 2MP | 32MP Front Camera<br>
+        • 5700 mAh Battery | Dimensity 7400
+    </p>
 
-            <p style="font-size: 14px; color: #212121;"><b>Available offers:</b> <br> <span style="color: #388e3c;"><i class="fa fa-tag"></i></span> Bank Offer 10% off on SBI Credit Card</p>
-
-            <div class="action-btns">
-                <a href="#" class="btn add-cart"><i class="fa fa-shopping-cart"></i> Add to Cart</a>
-                <a href="https://wa.me/919693786453?text=Hi Sachin, I want to buy this Product" target="_blank" class="btn buy-now">
-                    <i class="fa fa-bolt"></i> Buy Now
-                </a>
-            </div>
-            
-            <div class="footer-text">Sold by: Sachin Kumar Store</div>
-        </div>
+    <div class="action-btns">
+        <a href="#" class="btn add-cart"><i class="fa fa-shopping-cart"></i> Add to Cart</a>
+        <a href="https://wa.me/919693786453?text=Hi Sachin, I want to buy Vivo T4R 5G White" target="_blank" class="btn buy-now">
+            <i class="fa fa-bolt"></i> Buy Now
+        </a>
     </div>
-
-</body>
-</html>
+    
+    <div class="footer-text">Sold by: Sachin Kumar Store</div>
+</div>
