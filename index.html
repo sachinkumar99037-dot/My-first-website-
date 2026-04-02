@@ -2,140 +2,135 @@
 <html lang="hi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sachin Boss - Digital Services</title>
     <style>
-        /* Classic Windows Teal Background */
         body {
-            background-color: #008080;
             margin: 0;
-            padding: 5px;
-            font-family: "MS Sans Serif", Arial, sans-serif;
-            height: 100vh;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(180deg, #4A00E0 0%, #8E2DE2 100%);
+            min-height: 100vh;
             display: flex;
-            flex-direction: column;
+            justify-content: center;
         }
 
-        /* Full Screen Window Container */
-        .main-container {
-            background-color: #c0c0c0;
-            border-top: 3px solid #ffffff;
-            border-left: 3px solid #ffffff;
-            border-right: 3px solid #404040;
-            border-bottom: 3px solid #404040;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
+        .container {
+            width: 100%;
+            max-width: 450px;
+            background: #F4F7F6;
+            margin-top: 50px;
+            border-radius: 40px 40px 0 0;
+            padding-bottom: 30px;
         }
 
-        /* Title Bar */
-        .title-bar {
-            background: linear-gradient(90deg, #000080, #1084d0);
+        /* Profile Card */
+        .profile-card {
+            background: white;
+            margin: -60px 25px 20px 25px;
+            border-radius: 30px;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid #3B82F6;
+            margin-top: -60px;
+            object-fit: cover;
+        }
+
+        h1 { margin: 15px 0 5px 0; font-size: 24px; color: #333; }
+        .tagline { color: #666; font-size: 14px; margin-bottom: 20px; }
+
+        .social-btns {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .btn-social {
+            padding: 10px 20px;
+            border-radius: 25px;
             color: white;
-            padding: 5px 10px;
+            text-decoration: none;
             font-weight: bold;
-            font-size: 16px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            font-size: 14px;
+            border: none;
+            cursor: pointer;
         }
 
-        .close-btn {
-            background: #c0c0c0;
-            color: black;
-            border: 2px outset #fff;
-            padding: 0 6px;
-            font-size: 12px;
-            font-weight: bold;
-        }
+        .whatsapp { background: #25D366; }
+        .instagram { background: #E1306C; }
 
-        /* Output Screen - Jahan results dikhenge */
-        #screen-display {
-            background: #ffffff;
-            border: 3px inset #808080;
-            margin: 15px;
-            padding: 15px;
-            font-family: 'Courier New', monospace;
-            font-size: 18px;
-            min-height: 50px;
-            color: #000;
-            font-weight: bold;
-        }
+        /* Services Section */
+        h2 { text-align: center; color: #3B82F6; margin: 30px 0 20px 0; }
 
-        /* Grid for Large Functional Buttons */
-        .btn-grid {
+        .services-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 15px;
-            padding: 15px;
-            flex-grow: 1;
+            padding: 0 20px;
         }
 
-        /* Essential Old-School Button Style */
-        button {
-            background-color: #c0c0c0;
-            border-top: 3px solid #ffffff;
-            border-left: 3px solid #ffffff;
-            border-right: 3px solid #404040;
-            border-bottom: 3px solid #404040;
-            font-weight: bold;
-            font-size: 16px;
+        .service-card {
+            background: white;
             padding: 20px 10px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-weight: bold;
+            font-size: 13px;
+            color: #333;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-bottom: 4px solid #3B82F6;
             cursor: pointer;
-            outline: none;
-            -webkit-tap-highlight-color: transparent; /* Mobile tap fix */
+            transition: 0.2s;
+            border-top: none; border-left: none; border-right: none;
         }
 
-        /* Button Press Effect */
-        button:active {
-            border-top: 3px solid #404040;
-            border-left: 3px solid #404040;
-            border-right: 3px solid #ffffff;
-            border-bottom: 3px solid #ffffff;
-            background-color: #b0b0b0;
-            transform: translate(1px, 1px);
-        }
-
-        .status-bar {
-            border-top: 2px inset #ffffff;
-            padding: 3px 10px;
-            font-size: 12px;
-            background: #c0c0c0;
-        }
+        .service-card:active { transform: scale(0.95); background: #e0e0e0; }
     </style>
 </head>
 <body>
 
-<div class="main-container">
-    <div class="title-bar">
-        <span>COMMAND_CENTER.EXE</span>
-        <div class="close-btn" onclick="location.reload()">X</div>
-    </div>
-    
-    <div id="screen-display">SYSTEM ONLINE...</div>
-
-    <div class="btn-grid">
-        <button onclick="handleBtn('FILE SAVED ✅')">SAVE FILE</button>
-        <button onclick="handleBtn('SCANNING DISK...')">SCAN DISK</button>
-        <button onclick="handleBtn('CONNECTING...')">CONNECT</button>
-        <button onclick="handleBtn('CLEARING CACHE')">REFRESH</button>
-        <button onclick="handleBtn('ACCESS GRANTED')">LOGIN</button>
-        <button onclick="handleBtn('SYSTEM RESET')">RESET</button>
+<div class="container">
+    <div class="profile-card">
+        <img src="https://via.placeholder.com/150" alt="Sachin Boss" class="profile-img">
+        <h1>Sachin Boss 🚀</h1>
+        <p class="tagline">Expert in Digital & CSC Services</p>
+        
+        <div class="social-btns">
+            <button class="btn-social whatsapp" onclick="action('WhatsApp')">WhatsApp Me</button>
+            <button class="btn-social instagram" onclick="action('Instagram')">Instagram</button>
+        </div>
     </div>
 
-    <div class="status-bar">Status: All Buttons Active</div>
+    <h2>Our Services</h2>
+
+    <div class="services-grid">
+        <div class="service-card" onclick="action('Aadhaar Card')">🆔 Aadhaar Card</div>
+        <div class="service-card" onclick="action('PAN Card')">💳 PAN Card</div>
+        <div class="service-card" onclick="action('Voter ID Card')">🗳️ Voter ID Card</div>
+        <div class="service-card" onclick="action('Ayushman Card')">🏥 Ayushman Card</div>
+        <div class="service-card" onclick="action('Ration Card')">🌾 Ration Card</div>
+        <div class="service-card" onclick="action('Income Tax')">💰 Income Tax</div>
+        <div class="service-card" onclick="action('Birth Certificate')">👶 Birth Certificate</div>
+        <div class="service-card" onclick="action('Scholarship')">🎓 Scholarship</div>
+        <div class="service-card" onclick="action('Online Form')">📝 Online Form</div>
+        <div class="service-card" onclick="action('Train Ticket')">🚆 Train Ticket</div>
+    </div>
 </div>
 
 <script>
-    // Ye function har button ko working banata hai
-    function handleBtn(msg) {
-        const screen = document.getElementById('screen-display');
-        screen.innerText = msg;
-        
-        // Haptic feedback feel ke liye (agar support ho)
-        if (window.navigator.vibrate) {
-            window.navigator.vibrate(50);
-        }
-        console.log("Button Pressed: " + msg);
+    function action(service) {
+        alert(service + " service par kaam shuru ho gaya hai!");
+        // Yahan aap window.location.href = 'apna-link' daal sakte hain
     }
 </script>
 
