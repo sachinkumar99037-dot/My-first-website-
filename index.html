@@ -1,39 +1,118 @@
-<div class="services-container">
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Updated Classic UI</title>
+    <style>
+        :root {
+            /* Yahan se aap colors badal sakte hain */
+            --bg-color: #2c3e50;      /* Dark Blue-Grey Background */
+            --window-bg: #ecf0f1;    /* Light Grey Window */
+            --title-bar: #2980b9;    /* Bright Blue Title Bar */
+            --btn-shadow: #7f8c8d;   /* Button Shadow */
+        }
 
-  <div class="service-box" onclick="openWebsite('https://uidai.gov.in/')">🪪 Aadhaar Card</div>
+        body {
+            background-color: var(--bg-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
 
-  <div class="service-box" onclick="openWebsite('https://www.onlineservices.nsdl.com/paam/endUserRegisterContact.html')">💳 PAN Card</div>
+        .window {
+            background-color: var(--window-bg);
+            border: 3px solid #ffffff;
+            box-shadow: 10px 10px 0px rgba(0,0,0,0.2);
+            width: 450px;
+            padding: 15px;
+        }
 
-  <div class="service-box" onclick="openWebsite('https://voters.eci.gov.in/')">🗳️ Voter ID Card</div>
+        .title-bar {
+            background: var(--title-bar);
+            color: white;
+            padding: 5px 10px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
 
-  <div class="service-box" onclick="openWebsite('https://beneficiary.nha.gov.in/')">🏥 Ayushman Card</div>
+        #display {
+            background: #ffffff;
+            border: 3px inset #bdc3c7;
+            padding: 15px;
+            min-height: 40px;
+            margin-bottom: 15px;
+            color: #333;
+            font-weight: bold;
+            text-align: center;
+        }
 
-  <div class="service-box" onclick="openWebsite('https://nfsa.gov.in/')">🌾 Ration Card</div>
+        .button-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
 
-  <div class="service-box" onclick="openWebsite('https://www.incometax.gov.in/')">💰 Income Tax</div>
+        /* Wahi Purana Button Style */
+        button {
+            background-color: #d1d1d1;
+            border-top: 3px solid #ffffff;
+            border-left: 3px solid #ffffff;
+            border-right: 3px solid var(--btn-shadow);
+            border-bottom: 3px solid var(--btn-shadow);
+            padding: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: 0.1s;
+        }
 
-  <div class="service-box" onclick="openWebsite('https://crsorgi.gov.in/')">👶 Birth Certificate</div>
+        button:active {
+            border-top: 3px solid var(--btn-shadow);
+            border-left: 3px solid var(--btn-shadow);
+            border-right: 3px solid #ffffff;
+            border-bottom: 3px solid #ffffff;
+            transform: translate(2px, 2px);
+        }
+    </style>
+</head>
+<body>
 
-  <div class="service-box" onclick="openWebsite('https://scholarships.gov.in/')">🎓 Scholarship</div>
+<div class="window">
+    <div class="title-bar">
+        <span>CONTROL_PANEL.v2</span>
+        <span>[X]</span>
+    </div>
+    
+    <div id="display">System Ready... Saare buttons on hain!</div>
 
-  <div class="service-box" onclick="openWebsite('https://www.irctc.co.in/')">🚆 Train Ticket</div>
-
-  <div class="service-box" onclick="openWebsite('https://www.paytm.com/recharge')">📱 Mobile Recharge</div>
-
-  <div class="service-box" onclick="openWebsite('https://www.phonepe.com/')">💸 Money Transfer</div>
-
-  <div class="service-box" onclick="openWebsite('https://licindia.in/')">🛡️ Insurance</div>
-
-  <div class="service-box" onclick="openWebsite('https://www.npci.org.in/what-we-do/aeps/product-overview')">🏧 AEPS Service</div>
-
-  <div class="service-box" onclick="openWebsite('https://pmkisan.gov.in/')">🚜 PM Kisan</div>
-
-  <div class="service-box" onclick="openWebsite('https://eshram.gov.in/')">👷 Labour Card</div>
-
+    <div class="button-grid">
+        <button onclick="updateStatus('DASHBOARD Active')">Dashboard</button>
+        <button onclick="updateStatus('DATA Processed')">Process Data</button>
+        <button onclick="launchAlert()">System Check</button>
+        <button onclick="resetDisplay()">Reset All</button>
+    </div>
 </div>
 
 <script>
-  function openWebsite(url) {
-    window.open(url, "_blank");
-  }
+    // Ye functions har button ko working banate hain
+    function updateStatus(msg) {
+        document.getElementById('display').innerText = msg;
+        document.getElementById('display').style.color = "#2980b9";
+    }
+
+    function launchAlert() {
+        alert("Alert: Sab sahi se kaam kar raha hai!");
+    }
+
+    function resetDisplay() {
+        document.getElementById('display').innerText = "System Ready...";
+        document.getElementById('display').style.color = "#333";
+    }
 </script>
+
+</body>
+</html>
