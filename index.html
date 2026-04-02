@@ -1,81 +1,75 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Updated Classic UI</title>
     <style>
-        :root {
-            /* Yahan se aap colors badal sakte hain */
-            --bg-color: #2c3e50;      /* Dark Blue-Grey Background */
-            --window-bg: #ecf0f1;    /* Light Grey Window */
-            --title-bar: #2980b9;    /* Bright Blue Title Bar */
-            --btn-shadow: #7f8c8d;   /* Button Shadow */
-        }
-
         body {
-            background-color: var(--bg-color);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #008080; /* Original Windows Teal */
+            margin: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            margin: 0;
         }
 
+        /* Original Window Frame */
         .window {
-            background-color: var(--window-bg);
-            border: 3px solid #ffffff;
-            box-shadow: 10px 10px 0px rgba(0,0,0,0.2);
-            width: 450px;
-            padding: 15px;
+            background-color: #c0c0c0;
+            border-top: 2px solid #dfdfdf;
+            border-left: 2px solid #dfdfdf;
+            border-right: 2px solid #000000;
+            border-bottom: 2px solid #000000;
+            width: 350px;
+            padding: 2px;
         }
 
+        /* Classic Blue Title Bar */
         .title-bar {
-            background: var(--title-bar);
+            background-color: #000080;
             color: white;
-            padding: 5px 10px;
+            font-family: sans-serif;
             font-weight: bold;
+            font-size: 14px;
+            padding: 3px 5px;
             display: flex;
             justify-content: space-between;
-            margin-bottom: 15px;
         }
 
-        #display {
-            background: #ffffff;
-            border: 3px inset #bdc3c7;
-            padding: 15px;
-            min-height: 40px;
-            margin-bottom: 15px;
-            color: #333;
-            font-weight: bold;
+        /* Screen Area */
+        #display-screen {
+            background-color: #ffffff;
+            border: 2px inset #808080;
+            margin: 10px;
+            padding: 10px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 13px;
+            height: 40px;
+        }
+
+        /* Original Beveled Buttons */
+        .btn-container {
+            padding: 10px;
             text-align: center;
         }
 
-        .button-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-        }
-
-        /* Wahi Purana Button Style */
         button {
-            background-color: #d1d1d1;
-            border-top: 3px solid #ffffff;
-            border-left: 3px solid #ffffff;
-            border-right: 3px solid var(--btn-shadow);
-            border-bottom: 3px solid var(--btn-shadow);
-            padding: 10px;
+            background-color: #c0c0c0;
+            border-top: 2px solid #ffffff;
+            border-left: 2px solid #ffffff;
+            border-right: 2px solid #808080;
+            border-bottom: 2px solid #808080;
+            font-family: sans-serif;
+            font-size: 12px;
+            padding: 5px 15px;
+            margin: 5px;
+            outline: none;
             cursor: pointer;
-            font-weight: bold;
-            text-transform: uppercase;
-            transition: 0.1s;
         }
 
         button:active {
-            border-top: 3px solid var(--btn-shadow);
-            border-left: 3px solid var(--btn-shadow);
-            border-right: 3px solid #ffffff;
-            border-bottom: 3px solid #ffffff;
-            transform: translate(2px, 2px);
+            border-top: 2px solid #808080;
+            border-left: 2px solid #808080;
+            border-right: 2px solid #ffffff;
+            border-bottom: 2px solid #ffffff;
         }
     </style>
 </head>
@@ -83,34 +77,23 @@
 
 <div class="window">
     <div class="title-bar">
-        <span>CONTROL_PANEL.v2</span>
-        <span>[X]</span>
+        <span>MY_OLD_APP.EXE</span>
+        <span style="background:#c0c0c0; color:black; padding:0 3px; font-size:10px; border:1px solid black;">X</span>
     </div>
     
-    <div id="display">System Ready... Saare buttons on hain!</div>
+    <div id="display-screen">SYSTEM READY...</div>
 
-    <div class="button-grid">
-        <button onclick="updateStatus('DASHBOARD Active')">Dashboard</button>
-        <button onclick="updateStatus('DATA Processed')">Process Data</button>
-        <button onclick="launchAlert()">System Check</button>
-        <button onclick="resetDisplay()">Reset All</button>
+    <div class="btn-container">
+        <button onclick="run('FILE OPENED')">OPEN</button>
+        <button onclick="run('SAVING DATA...')">SAVE</button>
+        <button onclick="run('REBOOTING...')">REBOOT</button>
+        <button onclick="run('SYSTEM READY')">RESET</button>
     </div>
 </div>
 
 <script>
-    // Ye functions har button ko working banate hain
-    function updateStatus(msg) {
-        document.getElementById('display').innerText = msg;
-        document.getElementById('display').style.color = "#2980b9";
-    }
-
-    function launchAlert() {
-        alert("Alert: Sab sahi se kaam kar raha hai!");
-    }
-
-    function resetDisplay() {
-        document.getElementById('display').innerText = "System Ready...";
-        document.getElementById('display').style.color = "#333";
+    function run(msg) {
+        document.getElementById('display-screen').innerText = msg;
     }
 </script>
 
