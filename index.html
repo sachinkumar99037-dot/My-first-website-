@@ -1,138 +1,51 @@
-<!DOCTYPE html>
-<html lang="hi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sachin Boss - Digital Services</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(180deg, #4A00E0 0%, #8E2DE2 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 450px;
-            background: #F4F7F6;
-            margin-top: 50px;
-            border-radius: 40px 40px 0 0;
-            padding-bottom: 30px;
-        }
-
-        /* Profile Card */
-        .profile-card {
-            background: white;
-            margin: -60px 25px 20px 25px;
-            border-radius: 30px;
-            text-align: center;
-            padding: 20px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-
-        .profile-img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            border: 4px solid #3B82F6;
-            margin-top: -60px;
-            object-fit: cover;
-        }
-
-        h1 { margin: 15px 0 5px 0; font-size: 24px; color: #333; }
-        .tagline { color: #666; font-size: 14px; margin-bottom: 20px; }
-
-        .social-btns {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .btn-social {
-            padding: 10px 20px;
-            border-radius: 25px;
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 14px;
-            border: none;
-            cursor: pointer;
-        }
-
-        .whatsapp { background: #25D366; }
-        .instagram { background: #E1306C; }
-
-        /* Services Section */
-        h2 { text-align: center; color: #3B82F6; margin: 30px 0 20px 0; }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            padding: 0 20px;
-        }
-
-        .service-card {
-            background: white;
-            padding: 20px 10px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            font-weight: bold;
-            font-size: 13px;
-            color: #333;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            border-bottom: 4px solid #3B82F6;
-            cursor: pointer;
-            transition: 0.2s;
-            border-top: none; border-left: none; border-right: none;
-        }
-
-        .service-card:active { transform: scale(0.95); background: #e0e0e0; }
-    </style>
-</head>
-<body>
-
-<div class="container">
-    <div class="profile-card">
-        <img src="https://via.placeholder.com/150" alt="Sachin Boss" class="profile-img">
-        <h1>Sachin Boss 🚀</h1>
-        <p class="tagline">Expert in Digital & CSC Services</p>
-        
-        <div class="social-btns">
-            <button class="btn-social whatsapp" onclick="action('WhatsApp')">WhatsApp Me</button>
-            <button class="btn-social instagram" onclick="action('Instagram')">Instagram</button>
-        </div>
-    </div>
-
-    <h2>Our Services</h2>
-
-    <div class="services-grid">
-        <div class="service-card" onclick="action('Aadhaar Card')">🆔 Aadhaar Card</div>
-        <div class="service-card" onclick="action('PAN Card')">💳 PAN Card</div>
-        <div class="service-card" onclick="action('Voter ID Card')">🗳️ Voter ID Card</div>
-        <div class="service-card" onclick="action('Ayushman Card')">🏥 Ayushman Card</div>
-        <div class="service-card" onclick="action('Ration Card')">🌾 Ration Card</div>
-        <div class="service-card" onclick="action('Income Tax')">💰 Income Tax</div>
-        <div class="service-card" onclick="action('Birth Certificate')">👶 Birth Certificate</div>
-        <div class="service-card" onclick="action('Scholarship')">🎓 Scholarship</div>
-        <div class="service-card" onclick="action('Online Form')">📝 Online Form</div>
-        <div class="service-card" onclick="action('Train Ticket')">🚆 Train Ticket</div>
-    </div>
-</div>
-
 <script>
     function action(service) {
-        alert(service + " service par kaam shuru ho gaya hai!");
-        // Yahan aap window.location.href = 'apna-link' daal sakte hain
+        let url = "";
+
+        switch(service) {
+            case 'Aadhaar Card':
+                url = "https://myaadhaar.uidai.gov.in/";
+                break;
+            case 'PAN Card':
+                url = "https://www.onlineservices.nsdl.com/paam/endUserRegisterContact.html";
+                break;
+            case 'Voter ID Card':
+                url = "https://voters.eci.gov.in/";
+                break;
+            case 'Ayushman Card':
+                url = "https://beneficiary.nha.gov.in/";
+                break;
+            case 'Ration Card':
+                url = "https://nfsa.gov.in/portal/apply_ration_card";
+                break;
+            case 'Income Tax':
+                url = "https://www.incometax.gov.in/";
+                break;
+            case 'Birth Certificate':
+                url = "https://crsorgi.gov.in/";
+                break;
+            case 'Scholarship':
+                url = "https://scholarships.gov.in/";
+                break;
+            case 'Online Form':
+                url = "https://www.sarkariresult.com/";
+                break;
+            case 'Train Ticket':
+                url = "https://www.irctc.co.in/";
+                break;
+            case 'WhatsApp':
+                url = "https://wa.me/91YOURNUMBER"; // Yahan apna number dalein
+                break;
+            case 'Instagram':
+                url = "https://instagram.com/yourusername"; // Yahan apna username dalein
+                break;
+            default:
+                alert(service + " service jald hi chalu hogi!");
+                return;
+        }
+
+        if(url) {
+            window.open(url, '_blank');
+        }
     }
 </script>
-
-</body>
-</html>
