@@ -1,51 +1,70 @@
-<script>
-    function action(service) {
-        let url = "";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital & CSC Services - Sachin Boss</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f2f5; margin: 0; padding: 20px; text-align: center; }
+        .header { background: #007bff; color: white; padding: 20px; border-radius: 10px; margin-bottom: 20px; }
+        .profile-img { width: 120px; height: 120px; border-radius: 50%; border: 4px solid white; margin-top: 10px; object-fit: cover; }
+        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; max-width: 900px; margin: auto; }
+        .card { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); cursor: pointer; transition: 0.3s; border: 1px solid #ddd; }
+        .card:hover { transform: translateY(-5px); background: #e7f3ff; border-color: #007bff; }
+        .card i { font-size: 30px; color: #007bff; margin-bottom: 10px; display: block; }
+        .card span { font-weight: bold; color: #333; }
+        .footer-btns { margin-top: 30px; }
+        .btn { padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; color: white; margin: 5px; text-decoration: none; display: inline-block; }
+        .btn-whatsapp { background: #25d366; }
+        .btn-insta { background: #e1306c; }
+    </style>
+</head>
+<body>
 
-        switch(service) {
-            case 'Aadhaar Card':
-                url = "https://myaadhaar.uidai.gov.in/";
-                break;
-            case 'PAN Card':
-                url = "https://www.onlineservices.nsdl.com/paam/endUserRegisterContact.html";
-                break;
-            case 'Voter ID Card':
-                url = "https://voters.eci.gov.in/";
-                break;
-            case 'Ayushman Card':
-                url = "https://beneficiary.nha.gov.in/";
-                break;
-            case 'Ration Card':
-                url = "https://nfsa.gov.in/portal/apply_ration_card";
-                break;
-            case 'Income Tax':
-                url = "https://www.incometax.gov.in/";
-                break;
-            case 'Birth Certificate':
-                url = "https://crsorgi.gov.in/";
-                break;
-            case 'Scholarship':
-                url = "https://scholarships.gov.in/";
-                break;
-            case 'Online Form':
-                url = "https://www.sarkariresult.com/";
-                break;
-            case 'Train Ticket':
-                url = "https://www.irctc.co.in/";
-                break;
-            case 'WhatsApp':
-                url = "https://wa.me/91YOURNUMBER"; // Yahan apna number dalein
-                break;
-            case 'Instagram':
-                url = "https://instagram.com/yourusername"; // Yahan apna username dalein
-                break;
-            default:
-                alert(service + " service jald hi chalu hogi!");
-                return;
-        }
+    <div class="header">
+        <img src="WhatsApp Image 2026-03-31 at 2.04.48 PM.jpeg" alt="Sachin Boss" class="profile-img">
+        <h1>Sachin Digital Services</h1>
+        <p>Sabhi Sarkari Online Suvidhayein Ek Hi Jagah Par</p>
+    </div>
 
-        if(url) {
-            window.open(url, '_blank');
+    <div class="grid-container">
+        <div class="card" onclick="action('Aadhaar Card')"><span>🆔 Aadhaar Card</span></div>
+        <div class="card" onclick="action('PAN Card')"><span>💳 PAN Card</span></div>
+        <div class="card" onclick="action('Voter ID Card')"><span>🗳️ Voter ID</span></div>
+        <div class="card" onclick="action('Ayushman Card')"><span>🏥 Ayushman Card</span></div>
+        <div class="card" onclick="action('Ration Card')"><span>🌾 Ration Card</span></div>
+        <div class="card" onclick="action('Income Tax')"><span>💰 Income Tax</span></div>
+        <div class="card" onclick="action('Birth Certificate')"><span>👶 Birth Cert.</span></div>
+        <div class="card" onclick="action('Scholarship')"><span>🎓 Scholarship</span></div>
+        <div class="card" onclick="action('Online Form')"><span>📝 Online Form</span></div>
+        <div class="card" onclick="action('Train Ticket')"><span>🚂 Train Ticket</span></div>
+    </div>
+
+    <div class="footer-btns">
+        <a href="#" class="btn btn-whatsapp" onclick="action('WhatsApp')">WhatsApp Chat</a>
+        <a href="#" class="btn btn-insta" onclick="action('Instagram')">Instagram Profile</a>
+    </div>
+
+    <script>
+        function action(service) {
+            let url = "";
+            switch(service) {
+                case 'Aadhaar Card': url = "https://myaadhaar.uidai.gov.in/"; break;
+                case 'PAN Card': url = "https://www.onlineservices.nsdl.com/paam/endUserRegisterContact.html"; break;
+                case 'Voter ID Card': url = "https://voters.eci.gov.in/"; break;
+                case 'Ayushman Card': url = "https://beneficiary.nha.gov.in/"; break;
+                case 'Ration Card': url = "https://nfsa.gov.in/portal/apply_ration_card"; break;
+                case 'Income Tax': url = "https://www.incometax.gov.in/"; break;
+                case 'Birth Certificate': url = "https://crsorgi.gov.in/"; break;
+                case 'Scholarship': url = "https://scholarships.gov.in/"; break;
+                case 'Online Form': url = "https://www.sarkariresult.com/"; break;
+                case 'Train Ticket': url = "https://www.irctc.co.in/"; break;
+                case 'WhatsApp': url = "https://wa.me/91XXXXXXXXXX"; break; // Yahan apna Mobile No. likhein
+                case 'Instagram': url = "https://instagram.com/sachinkumar"; break; // Yahan apna Username likhein
+                default: alert("Service Coming Soon!"); return;
+            }
+            if(url) window.open(url, '_blank');
         }
-    }
-</script>
+    </script>
+</body>
+</html>
