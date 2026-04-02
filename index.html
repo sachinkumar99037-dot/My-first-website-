@@ -1,87 +1,39 @@
-<script>
-  function openWebsite(service) {
-    const websites = {
-      aadhaar: "https://uidai.gov.in/",
-      pan: "https://www.onlineservices.nsdl.com/paam/endUserRegisterContact.html",
-      voter: "https://voters.eci.gov.in/",
-      ayushman: "https://beneficiary.nha.gov.in/",
-      ration: "https://nfsa.gov.in/",
-      incomeTax: "https://www.incometax.gov.in/",
-      birth: "https://crsorgi.gov.in/",
-      scholarship: "https://scholarships.gov.in/",
-      onlineForm: "https://www.onlineservices.nsdl.com/paam/endUserRegisterContact.html",
-      train: "https://www.irctc.co.in/",
-      recharge: "https://www.paytm.com/recharge",
-      moneyTransfer: "https://www.phonepe.com/",
-      insurance: "https://licindia.in/",
-      aeps: "https://www.npci.org.in/what-we-do/aeps/product-overview",
-      pmkisan: "https://pmkisan.gov.in/",
-      labour: "https://eshram.gov.in/"
-    };
-
-    window.open(websites[service], "_blank");
-  }
-</script>
-
 <div class="services-container">
 
-  <div class="service-box" onclick="openWebsite('aadhaar')">🪪 Aadhaar Card</div>
+  <div class="service-box" onclick="openWebsite('https://uidai.gov.in/')">🪪 Aadhaar Card</div>
 
-  <div class="service-box" onclick="openWebsite('pan')">💳 PAN Card</div>
+  <div class="service-box" onclick="openWebsite('https://www.onlineservices.nsdl.com/paam/endUserRegisterContact.html')">💳 PAN Card</div>
 
-  <div class="service-box" onclick="openWebsite('voter')">🗳️ Voter ID Card</div>
+  <div class="service-box" onclick="openWebsite('https://voters.eci.gov.in/')">🗳️ Voter ID Card</div>
 
-  <div class="service-box" onclick="openWebsite('ayushman')">🏥 Ayushman Card</div>
+  <div class="service-box" onclick="openWebsite('https://beneficiary.nha.gov.in/')">🏥 Ayushman Card</div>
 
-  <div class="service-box" onclick="openWebsite('ration')">🌾 Ration Card</div>
+  <div class="service-box" onclick="openWebsite('https://nfsa.gov.in/')">🌾 Ration Card</div>
 
-  <div class="service-box" onclick="openWebsite('incomeTax')">💰 Income Tax</div>
+  <div class="service-box" onclick="openWebsite('https://www.incometax.gov.in/')">💰 Income Tax</div>
 
-  <div class="service-box" onclick="openWebsite('birth')">👶 Birth Certificate</div>
+  <div class="service-box" onclick="openWebsite('https://crsorgi.gov.in/')">👶 Birth Certificate</div>
 
-  <div class="service-box" onclick="openWebsite('scholarship')">🎓 Scholarship</div>
+  <div class="service-box" onclick="openWebsite('https://scholarships.gov.in/')">🎓 Scholarship</div>
 
-  <div class="service-box" onclick="openWebsite('onlineForm')">📝 Online Form</div>
+  <div class="service-box" onclick="openWebsite('https://www.irctc.co.in/')">🚆 Train Ticket</div>
 
-  <div class="service-box" onclick="openWebsite('train')">🚆 Train Ticket</div>
+  <div class="service-box" onclick="openWebsite('https://www.paytm.com/recharge')">📱 Mobile Recharge</div>
 
-  <div class="service-box" onclick="openWebsite('recharge')">📱 Mobile Recharge</div>
+  <div class="service-box" onclick="openWebsite('https://www.phonepe.com/')">💸 Money Transfer</div>
 
-  <div class="service-box" onclick="openWebsite('moneyTransfer')">💸 Money Transfer</div>
+  <div class="service-box" onclick="openWebsite('https://licindia.in/')">🛡️ Insurance</div>
 
-  <div class="service-box" onclick="openWebsite('insurance')">🛡️ Insurance</div>
+  <div class="service-box" onclick="openWebsite('https://www.npci.org.in/what-we-do/aeps/product-overview')">🏧 AEPS Service</div>
 
-  <div class="service-box" onclick="openWebsite('aeps')">🏧 AEPS Service</div>
+  <div class="service-box" onclick="openWebsite('https://pmkisan.gov.in/')">🚜 PM Kisan</div>
 
-  <div class="service-box" onclick="openWebsite('pmkisan')">🚜 PM Kisan</div>
+  <div class="service-box" onclick="openWebsite('https://eshram.gov.in/')">👷 Labour Card</div>
 
-  <div class="service-box" onclick="openWebsite('labour')">👷 Labour Card</div>
+</div>
 
-</div>.services-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
-  padding: 15px;
-}
-
-.service-box {
-  background: white;
-  padding: 30px 15px;
-  border-radius: 20px;
-  text-align: center;
-  font-size: 22px;
-  font-weight: bold;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  border-bottom: 5px solid #2d7ff9;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.service-box:hover {
-  transform: translateY(-5px);
-  background: #f5f5f5;
-}
-
-.service-box:active {
-  transform: scale(0.95);
-}
+<script>
+  function openWebsite(url) {
+    window.open(url, "_blank");
+  }
+</script>
