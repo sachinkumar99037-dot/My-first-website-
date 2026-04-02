@@ -1,99 +1,141 @@
 <!DOCTYPE html>
-<html>
+<html lang="hi">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <style>
+        /* Classic Windows Teal Background */
         body {
-            background-color: #008080; /* Original Windows Teal */
+            background-color: #008080;
             margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            padding: 5px;
+            font-family: "MS Sans Serif", Arial, sans-serif;
             height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
 
-        /* Original Window Frame */
-        .window {
+        /* Full Screen Window Container */
+        .main-container {
             background-color: #c0c0c0;
-            border-top: 2px solid #dfdfdf;
-            border-left: 2px solid #dfdfdf;
-            border-right: 2px solid #000000;
-            border-bottom: 2px solid #000000;
-            width: 350px;
-            padding: 2px;
+            border-top: 3px solid #ffffff;
+            border-left: 3px solid #ffffff;
+            border-right: 3px solid #404040;
+            border-bottom: 3px solid #404040;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
 
-        /* Classic Blue Title Bar */
+        /* Title Bar */
         .title-bar {
-            background-color: #000080;
+            background: linear-gradient(90deg, #000080, #1084d0);
             color: white;
-            font-family: sans-serif;
+            padding: 5px 10px;
             font-weight: bold;
-            font-size: 14px;
-            padding: 3px 5px;
+            font-size: 16px;
             display: flex;
             justify-content: space-between;
+            align-items: center;
         }
 
-        /* Screen Area */
-        #display-screen {
-            background-color: #ffffff;
-            border: 2px inset #808080;
-            margin: 10px;
-            padding: 10px;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 13px;
-            height: 40px;
+        .close-btn {
+            background: #c0c0c0;
+            color: black;
+            border: 2px outset #fff;
+            padding: 0 6px;
+            font-size: 12px;
+            font-weight: bold;
         }
 
-        /* Original Beveled Buttons */
-        .btn-container {
-            padding: 10px;
-            text-align: center;
+        /* Output Screen - Jahan results dikhenge */
+        #screen-display {
+            background: #ffffff;
+            border: 3px inset #808080;
+            margin: 15px;
+            padding: 15px;
+            font-family: 'Courier New', monospace;
+            font-size: 18px;
+            min-height: 50px;
+            color: #000;
+            font-weight: bold;
         }
 
+        /* Grid for Large Functional Buttons */
+        .btn-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            padding: 15px;
+            flex-grow: 1;
+        }
+
+        /* Essential Old-School Button Style */
         button {
             background-color: #c0c0c0;
-            border-top: 2px solid #ffffff;
-            border-left: 2px solid #ffffff;
-            border-right: 2px solid #808080;
-            border-bottom: 2px solid #808080;
-            font-family: sans-serif;
-            font-size: 12px;
-            padding: 5px 15px;
-            margin: 5px;
-            outline: none;
+            border-top: 3px solid #ffffff;
+            border-left: 3px solid #ffffff;
+            border-right: 3px solid #404040;
+            border-bottom: 3px solid #404040;
+            font-weight: bold;
+            font-size: 16px;
+            padding: 20px 10px;
             cursor: pointer;
+            outline: none;
+            -webkit-tap-highlight-color: transparent; /* Mobile tap fix */
         }
 
+        /* Button Press Effect */
         button:active {
-            border-top: 2px solid #808080;
-            border-left: 2px solid #808080;
-            border-right: 2px solid #ffffff;
-            border-bottom: 2px solid #ffffff;
+            border-top: 3px solid #404040;
+            border-left: 3px solid #404040;
+            border-right: 3px solid #ffffff;
+            border-bottom: 3px solid #ffffff;
+            background-color: #b0b0b0;
+            transform: translate(1px, 1px);
+        }
+
+        .status-bar {
+            border-top: 2px inset #ffffff;
+            padding: 3px 10px;
+            font-size: 12px;
+            background: #c0c0c0;
         }
     </style>
 </head>
 <body>
 
-<div class="window">
+<div class="main-container">
     <div class="title-bar">
-        <span>MY_OLD_APP.EXE</span>
-        <span style="background:#c0c0c0; color:black; padding:0 3px; font-size:10px; border:1px solid black;">X</span>
+        <span>COMMAND_CENTER.EXE</span>
+        <div class="close-btn" onclick="location.reload()">X</div>
     </div>
     
-    <div id="display-screen">SYSTEM READY...</div>
+    <div id="screen-display">SYSTEM ONLINE...</div>
 
-    <div class="btn-container">
-        <button onclick="run('FILE OPENED')">OPEN</button>
-        <button onclick="run('SAVING DATA...')">SAVE</button>
-        <button onclick="run('REBOOTING...')">REBOOT</button>
-        <button onclick="run('SYSTEM READY')">RESET</button>
+    <div class="btn-grid">
+        <button onclick="handleBtn('FILE SAVED ✅')">SAVE FILE</button>
+        <button onclick="handleBtn('SCANNING DISK...')">SCAN DISK</button>
+        <button onclick="handleBtn('CONNECTING...')">CONNECT</button>
+        <button onclick="handleBtn('CLEARING CACHE')">REFRESH</button>
+        <button onclick="handleBtn('ACCESS GRANTED')">LOGIN</button>
+        <button onclick="handleBtn('SYSTEM RESET')">RESET</button>
     </div>
+
+    <div class="status-bar">Status: All Buttons Active</div>
 </div>
 
 <script>
-    function run(msg) {
-        document.getElementById('display-screen').innerText = msg;
+    // Ye function har button ko working banata hai
+    function handleBtn(msg) {
+        const screen = document.getElementById('screen-display');
+        screen.innerText = msg;
+        
+        // Haptic feedback feel ke liye (agar support ho)
+        if (window.navigator.vibrate) {
+            window.navigator.vibrate(50);
+        }
+        console.log("Button Pressed: " + msg);
     }
 </script>
 
