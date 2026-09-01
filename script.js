@@ -25,20 +25,23 @@ function showMovies(movies) {
     mainGrid.innerHTML = '';
 
     movies.forEach(movie => {
-        const { title, poster_path, release_date, vote_average } = movie;
+        const { id, title, poster_path, release_date, vote_average } = movie;
         const imagePath = poster_path ? IMG_URL + poster_path : 'https://via.placeholder.com/300x400?text=No+Poster';
         const year = release_date ? release_date.split('-')[0] : 'N/A';
 
         const movieEl = document.createElement('div');
         movieEl.classList.add('movie-card');
         
+        // Movie Card HTML with link
         movieEl.innerHTML = `
-            <div class="badge">★ ${vote_average.toFixed(1)}</div>
-            <img src="${imagePath}" alt="${title}">
-            <div class="movie-info">
-                <h3>${title}</h3>
-                <p class="meta">${year}</p>
-            </div>
+            <a href="https://www.themoviedb.org/movie/${id}" target="_blank" style="text-decoration: none; color: inherit;">
+                <div class="badge">★ ${vote_average.toFixed(1)}</div>
+                <img src="${imagePath}" alt="${title}">
+                <div class="movie-info">
+                    <h3>${title}</h3>
+                    <p class="meta">${year}</p>
+                </div>
+            </a>
         `;
 
         mainGrid.appendChild(movieEl);
